@@ -3,34 +3,35 @@
 // маленькие буквы заменить "к" заменить большими "К"
 // а большие "С" заменить маленькими "с"
 
-string text = "- Я думаю, - сказал князь, улыбаясь, - что, "
+string textIs = "- Я думаю, - сказал князь, улыбаясь, - что, "
             + "ежели бы вас послали вместо нашего милого Винценгероде,"
             + "вы бы взяли приступом согласие прусского короля. "
             + "Вы так красноречивы. Вы дадите мне чаю?";
 
 
 
-string Replace(string text, char oldValue, char newValue)
+string Rplace(string text, char oldValue, char newValue)
 {
     string result = String.Empty;
-    int length = text.Length;
-    for (int i=0; i <= length; i++)
+    int len = text.Length;
+    for (int i=0; i < len; i++)
     {
-        if (text[i] == oldValue) result = result + $"{newValue}";
-        else result = result + $"{text[i]}";
+        if (text[i] == oldValue) result += $"{newValue}";
+        else result += $"{text[i]}";
     }
 
     return result;
 } 
 
-string newText = Replace(text, ' ', '|');
+string newText = Rplace(textIs, ' ', '|');
 Console.WriteLine(newText);
 Console.WriteLine();
 
-newText = Replace(text, 'к', 'К');
+newText = Rplace(newText, 'к', 'К');
 Console.WriteLine(newText);
+Console.WriteLine();
 
-newText = Replace(text, 'С', 'с');
+newText = Rplace(newText, 'С', 'с');
 Console.WriteLine(newText);
 
 
